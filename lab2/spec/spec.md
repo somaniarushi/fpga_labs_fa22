@@ -316,6 +316,13 @@ In this case, you can use the `$urandom()` system task to generate an unsigned r
   b = $urandom();
 ```
 
+## Using your Adder
+Before we move on, we can now use our adder to add numbers together! Put concretely, the LEDS[0:4] display the outputs calculated by adding a = `SWICHTES[0]BUTTONS[1:0]` and b = `SWITCHES[1]BUTTONS[3:2]`. 
+
+Try turning `SWITCH[0]` and `SWITCH[1]` off. None of the LEDS should be turned on. This is because with the first number's components on the board `SWITCH[0]`, `BUTTON[1]` and `BUTTON[0]` are all set to 0, making `a=0`. Similarly, `SWITCH[1]`, `BUTTON[2]`, and `BUTTON[3]` are all 0 as well, making `b=0`. `a+b = 0+0 = 0`, therefore the LEDS are all turned off. 
+
+Let's try doing 4 + 5. The first number would then be `100`. This is equivalent to `SWITCH[0]` = 1, `BUTTON[1]` = 0, and `BUTTON[0]` = 0. 5 can be defined similarily. The value 9 = `1001`, which means `LED[3]` and `LED[0]` should be 1. Feel free to experiment with any other numbers you'd like.
+
 ## Build Your First Sequential Digital Circuit
 In this section, you will design a 4-bit wrap-around counter that increments every second.
 The counter value is shown on the LEDS 0-3 of the PYNQ board.
